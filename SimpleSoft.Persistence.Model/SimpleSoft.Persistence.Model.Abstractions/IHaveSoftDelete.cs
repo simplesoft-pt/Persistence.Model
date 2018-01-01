@@ -25,22 +25,13 @@
 namespace SimpleSoft.Persistence.Model
 {
     /// <summary>
-    /// Represents an entity with an unique identifier
+    /// Metadata information about the entity delete state
     /// </summary>
-    /// <typeparam name="TId">The unique identifier type</typeparam>
-    public interface IEntity<TId> : IEntity
+    public interface IHaveSoftDelete
     {
         /// <summary>
-        /// The entity unique identifier
+        /// Is the entity deleted?
         /// </summary>
-        TId Id { get; set; }
-    }
-
-    /// <summary>
-    /// Represents an entity
-    /// </summary>
-    public interface IEntity
-    {
-
+        bool Deleted { get; set; }
     }
 }
