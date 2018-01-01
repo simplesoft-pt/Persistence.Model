@@ -22,6 +22,8 @@
 // SOFTWARE.
 #endregion
 
+using System;
+
 namespace SimpleSoft.Persistence.Model
 {
     /// <summary>
@@ -29,6 +31,7 @@ namespace SimpleSoft.Persistence.Model
     /// </summary>
     /// <typeparam name="TId">The unique identifier type</typeparam>
     public interface IEntity<TId> : IEntity
+        where TId : IEquatable<TId>
     {
         /// <summary>
         /// The entity unique identifier
