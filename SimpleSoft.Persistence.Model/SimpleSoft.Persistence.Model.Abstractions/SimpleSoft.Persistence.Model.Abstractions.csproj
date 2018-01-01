@@ -1,0 +1,43 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <RootNamespace>SimpleSoft.Persistence.Model</RootNamespace>
+    <AssemblyTitle>SimpleSoft.Persistence.Model.Abstractions</AssemblyTitle>
+    <AssemblyName>SimpleSoft.Persistence.Model.Abstractions</AssemblyName>
+    <Description>Library with helper interfaces and classes to provide consistency across application models.</Description>
+    <Product>SimpleSoft.Persistence</Product>
+    <Company>SimpleSoft.pt</Company>
+    <Copyright>Copyright © 2018 SimpleSoft.pt</Copyright>
+    <Authors>João Simões</Authors>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <!--
+    <AssemblyOriginatorKeyFile>../../Tools/SimpleSoft.Persistence.snk</AssemblyOriginatorKeyFile>
+    <SignAssembly>true</SignAssembly>
+    -->
+    <PublicSign Condition=" '$(OS)' != 'Windows_NT' ">true</PublicSign>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <GenerateAssemblyTitleAttribute>true</GenerateAssemblyTitleAttribute>
+    <GenerateAssemblyDescriptionAttribute>true</GenerateAssemblyDescriptionAttribute>
+    <TargetFramework>netstandard1.0</TargetFramework>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <PackageId>SimpleSoft.Persistence.Model.Abstractions</PackageId>
+    <PackageTags>database;entity</PackageTags>
+    <PackageIconUrl>https://avatars2.githubusercontent.com/u/30837484</PackageIconUrl>
+    <PackageProjectUrl>https://github.com/simplesoft-pt/Persistence.Model</PackageProjectUrl>
+    <PackageLicenseUrl>https://raw.githubusercontent.com/simplesoft-pt/Persistence.Model/master/LICENSE</PackageLicenseUrl>
+    <RepositoryType>git</RepositoryType>
+    <RepositoryUrl>https://github.com/simplesoft-pt/Persistence.Model.git</RepositoryUrl>
+    <GeneratePackageOnBuild Condition=" '$(BuildConfiguration)' == 'release' ">true</GeneratePackageOnBuild>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <AssemblyVersion>1.0.0</AssemblyVersion>
+    <FileVersion>1.0.0.18001</FileVersion>
+    <VersionPrefix>1.0.0-dev001</VersionPrefix>
+  </PropertyGroup>
+
+</Project>
