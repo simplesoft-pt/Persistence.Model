@@ -27,27 +27,27 @@ using System;
 namespace SimpleSoft.Persistence.Model
 {
     /// <summary>
-    /// Metadata information about the entity last update
+    /// Metadata information about the entity creation
     /// </summary>
-    /// <typeparam name="TUpdatedBy">The identifier or entity type</typeparam>
-    public interface IHaveUpdatedWithoutOffsetMeta<TUpdatedBy>
+    /// <typeparam name="TCreatedBy">The identifier or entity type</typeparam>
+    public interface IHaveCreatedLocalMeta<TCreatedBy>
     {
         /// <summary>
-        /// The <see cref="DateTimeOffset"/> when it was last updated
+        /// The <see cref="DateTime"/> when it was created
         /// </summary>
-        DateTime UpdatedOn { get; set; }
+        DateTime CreatedOn { get; set; }
 
         /// <summary>
-        /// The identifier (or entity) which last updated this entity
+        /// The identifier (or entity) which first created this entity
         /// </summary>
-        TUpdatedBy UpdatedBy { get; set; }
+        TCreatedBy CreatedBy { get; set; }
     }
 
     /// <summary>
-    /// Metadata information about the entity last update, using a <see cref="string"/>
-    /// as an identifier for the <see cref="IHaveUpdatedWithoutOffsetMeta{T}.UpdatedBy"/>
+    /// Metadata information about the entity creation, using a <see cref="string"/>
+    /// as an identifier for the <see cref="IHaveCreatedLocalMeta{TCreatedBy}.CreatedBy"/>
     /// </summary>
-    public interface IHaveUpdatedWithoutOffsetMeta : IHaveUpdatedWithoutOffsetMeta<string>
+    public interface IHaveCreatedLocalMeta : IHaveCreatedLocalMeta<string>
     {
 
     }

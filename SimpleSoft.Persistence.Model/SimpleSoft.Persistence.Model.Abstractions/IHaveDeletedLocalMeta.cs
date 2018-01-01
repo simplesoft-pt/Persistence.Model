@@ -27,27 +27,27 @@ using System;
 namespace SimpleSoft.Persistence.Model
 {
     /// <summary>
-    /// Metadata information about the entity creation
+    /// Metadata information about the entity soft deleted
     /// </summary>
-    /// <typeparam name="TCreatedBy">The identifier or entity type</typeparam>
-    public interface IHaveCreatedWithoutOffsetMeta<TCreatedBy>
+    /// <typeparam name="TDeletedBy">The identifier or entity type</typeparam>
+    public interface IHaveDeletedLocalMeta<TDeletedBy>
     {
         /// <summary>
-        /// The <see cref="DateTime"/> when it was created
+        /// The <see cref="DateTime"/> when it was soft deleted
         /// </summary>
-        DateTime CreatedOn { get; set; }
+        DateTime? DeletedOn { get; set; }
 
         /// <summary>
-        /// The identifier (or entity) which first created this entity
+        /// The identifier (or entity) which soft deleted this entity
         /// </summary>
-        TCreatedBy CreatedBy { get; set; }
+        TDeletedBy DeletedBy { get; set; }
     }
 
     /// <summary>
-    /// Metadata information about the entity creation, using a <see cref="string"/>
-    /// as an identifier for the <see cref="IHaveCreatedWithoutOffsetMeta{T}.CreatedBy"/>
+    /// Metadata information about the entity deletition, using a <see cref="string"/>
+    /// as an identifier for the <see cref="IHaveDeletedLocalMeta{TDeletedBy}.DeletedBy"/>
     /// </summary>
-    public interface IHaveCreatedWithoutOffsetMeta : IHaveCreatedWithoutOffsetMeta<string>
+    public interface IHaveDeletedLocalMeta : IHaveDeletedLocalMeta<string>
     {
 
     }
