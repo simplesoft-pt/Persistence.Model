@@ -12,10 +12,8 @@
   </PropertyGroup>
 
   <PropertyGroup>
-    <!--
     <AssemblyOriginatorKeyFile>../../Tools/SimpleSoft.Persistence.snk</AssemblyOriginatorKeyFile>
     <SignAssembly>true</SignAssembly>
-    -->
     <PublicSign Condition=" '$(OS)' != 'Windows_NT' ">true</PublicSign>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <GenerateAssemblyTitleAttribute>true</GenerateAssemblyTitleAttribute>
