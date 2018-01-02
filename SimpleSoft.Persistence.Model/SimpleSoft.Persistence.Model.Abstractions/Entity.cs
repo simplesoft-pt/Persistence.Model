@@ -26,7 +26,10 @@ using System;
 
 namespace SimpleSoft.Persistence.Model
 {
-    /// <inheritdoc />
+    /// <summary>
+    /// Represents an entity with an unique identifier
+    /// </summary>
+    /// <typeparam name="TId">The unique identifier type</typeparam>
     public abstract class Entity<TId> : IEntity<TId> 
         where TId : IEquatable<TId>
     {
@@ -34,7 +37,9 @@ namespace SimpleSoft.Persistence.Model
         public virtual TId Id { get; set; }
     }
 
-    /// <inheritdoc />
+    /// <summary>
+    /// Represents an entity
+    /// </summary>
     public abstract class Entity : IEntity
     {
 
