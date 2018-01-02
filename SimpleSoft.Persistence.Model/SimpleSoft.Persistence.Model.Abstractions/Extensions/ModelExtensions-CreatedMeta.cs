@@ -64,8 +64,9 @@ namespace SimpleSoft.Persistence.Model
             where TBy : IEquatable<TBy>
         {
             if (entity == null) throw new ArgumentNullException(nameof(entity));
+            if (by == null) throw new ArgumentNullException(nameof(by));
 
-            return entity.CreatedBy == null ? by == null : entity.CreatedBy.Equals(by);
+            return by.Equals(entity.CreatedBy);
         }
 
         /// <summary>
@@ -103,8 +104,9 @@ namespace SimpleSoft.Persistence.Model
             where TBy : IEquatable<TBy>
         {
             if (entity == null) throw new ArgumentNullException(nameof(entity));
+            if (by == null) throw new ArgumentNullException(nameof(by));
 
-            return entity.CreatedBy == null ? by == null : entity.CreatedBy.Equals(by);
+            return by.Equals(by);
         }
     }
 }
