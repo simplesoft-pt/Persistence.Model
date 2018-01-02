@@ -38,4 +38,8 @@
     <VersionPrefix>1.0.0-dev001</VersionPrefix>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="System.Linq.Queryable" Version="4.3.0" />
+  </ItemGroup>
+
 </Project>
