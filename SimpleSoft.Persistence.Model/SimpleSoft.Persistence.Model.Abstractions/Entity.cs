@@ -33,8 +33,31 @@ namespace SimpleSoft.Persistence.Model
     public abstract class Entity<TId> : IEntity<TId> 
         where TId : IEquatable<TId>
     {
+        private TId _id;
+
+        /// <summary>
+        /// Creates a new instance
+        /// </summary>
+        protected Entity()
+        {
+
+        }
+
+        /// <summary>
+        /// Creates a new instance
+        /// </summary>
+        /// <param name="id">The unique identifier</param>
+        protected Entity(TId id)
+        {
+            _id = id;
+        }
+
         /// <inheritdoc />
-        public virtual TId Id { get; set; }
+        public virtual TId Id
+        {
+            get => _id;
+            set => _id = value;
+        }
     }
 
     /// <summary>
