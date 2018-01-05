@@ -42,4 +42,8 @@
     <PackageReference Include="System.Linq.Queryable" Version="4.3.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Abstracts\" />
+  </ItemGroup>
+
 </Project>
