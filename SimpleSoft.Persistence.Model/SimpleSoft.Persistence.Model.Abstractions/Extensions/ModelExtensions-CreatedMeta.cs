@@ -53,14 +53,12 @@ namespace SimpleSoft.Persistence.Model
         /// Was the <see cref="IHaveCreatedMeta{TCreatedBy}"/> instance created
         /// by the given identifier?
         /// </summary>
-        /// <typeparam name="T">The entity type</typeparam>
         /// <typeparam name="TBy">The created by type</typeparam>
         /// <param name="entity">The entity to fill</param>
         /// <param name="by">Who created the entity</param>
         /// <returns>True if created, otherwise false</returns>
         /// <exception cref="ArgumentNullException"></exception>
-        public static bool WasCreatedBy<T, TBy>(this T entity, TBy by)
-            where T : class, IHaveCreatedMeta<TBy>
+        public static bool WasCreatedBy<TBy>(this IHaveCreatedMeta<TBy> entity, TBy by)
             where TBy : IEquatable<TBy>
         {
             if (entity == null) throw new ArgumentNullException(nameof(entity));
@@ -93,14 +91,12 @@ namespace SimpleSoft.Persistence.Model
         /// Was the <see cref="IHaveCreatedLocalMeta{TCreatedBy}"/> instance created
         /// by the given identifier?
         /// </summary>
-        /// <typeparam name="T">The entity type</typeparam>
         /// <typeparam name="TBy">The created by type</typeparam>
         /// <param name="entity">The entity to fill</param>
         /// <param name="by">Who created the entity</param>
         /// <returns>True if created, otherwise false</returns>
         /// <exception cref="ArgumentNullException"></exception>
-        public static bool WasCreatedLocallyBy<T, TBy>(this T entity, TBy by)
-            where T : class, IHaveCreatedLocalMeta<TBy>
+        public static bool WasCreatedLocallyBy<TBy>(this IHaveCreatedLocalMeta<TBy> entity, TBy by)
             where TBy : IEquatable<TBy>
         {
             if (entity == null) throw new ArgumentNullException(nameof(entity));
