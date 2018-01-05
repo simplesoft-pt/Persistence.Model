@@ -24,24 +24,25 @@
 
 using System;
 
+// ReSharper disable once CheckNamespace
 namespace SimpleSoft.Persistence.Model
 {
     /// <summary>
     /// Represents an entity that has an unique identifier, created, updated, deleted metadata
-    /// and version as byte array.
+    /// and version as Guid.
     /// </summary>
     /// <typeparam name="TId">The identifier type</typeparam>
     /// <typeparam name="TCreated">The created by type</typeparam>
     /// <typeparam name="TUpdated">The updated by type</typeparam>
     /// <typeparam name="TDeleted">The deleted by type</typeparam>
-    public abstract class EntityWithAllLocalMetaAndVersionAsByteArray<TId, TCreated, TUpdated, TDeleted> :
-        EntityWithAllLocalMetaAndVersion<TId, TCreated, TUpdated, TDeleted, byte[]>, IHaveVersionAsByteArray
+    public abstract class EntityWithAllMetaAndVersionAsGuid<TId, TCreated, TUpdated, TDeleted> :
+        EntityWithAllMetaAndVersion<TId, TCreated, TUpdated, TDeleted, Guid>, IHaveVersionAsGuid
         where TId : IEquatable<TId>
     {
         /// <summary>
         /// Creates a new instance
         /// </summary>
-        protected EntityWithAllLocalMetaAndVersionAsByteArray()
+        protected EntityWithAllMetaAndVersionAsGuid()
         {
 
         }
@@ -50,7 +51,7 @@ namespace SimpleSoft.Persistence.Model
         /// Creates a new instance
         /// </summary>
         /// <param name="id">The unique identifier</param>
-        protected EntityWithAllLocalMetaAndVersionAsByteArray(TId id) : base(id)
+        protected EntityWithAllMetaAndVersionAsGuid(TId id) : base(id)
         {
 
         }
@@ -58,18 +59,18 @@ namespace SimpleSoft.Persistence.Model
 
     /// <summary>
     /// Represents an entity that has an unique identifier, created, updated, deleted metadata
-    /// and version as byte array.
+    /// and version as Guid.
     /// </summary>
     /// <typeparam name="TId">The identifier type</typeparam>
     /// <typeparam name="TBy">The by type</typeparam>
-    public abstract class EntityWithAllLocalMetaAndVersionAsByteArray<TId, TBy> :
-        EntityWithAllLocalMetaAndVersion<TId, TBy, byte[]>, IHaveVersionAsByteArray
+    public abstract class EntityWithAllMetaAndVersionAsGuid<TId, TBy> :
+        EntityWithAllMetaAndVersion<TId, TBy, Guid>, IHaveVersionAsGuid
         where TId : IEquatable<TId>
     {
         /// <summary>
         /// Creates a new instance
         /// </summary>
-        protected EntityWithAllLocalMetaAndVersionAsByteArray()
+        protected EntityWithAllMetaAndVersionAsGuid()
         {
 
         }
@@ -78,7 +79,7 @@ namespace SimpleSoft.Persistence.Model
         /// Creates a new instance
         /// </summary>
         /// <param name="id">The unique identifier</param>
-        protected EntityWithAllLocalMetaAndVersionAsByteArray(TId id) : base(id)
+        protected EntityWithAllMetaAndVersionAsGuid(TId id) : base(id)
         {
 
         }
@@ -86,17 +87,17 @@ namespace SimpleSoft.Persistence.Model
 
     /// <summary>
     /// Represents an entity that has an unique identifier, created, updated, deleted metadata
-    /// and version as byte array.
+    /// and version as Guid.
     /// </summary>
     /// <typeparam name="TId">The identifier type</typeparam>
-    public abstract class EntityWithAllLocalMetaAndVersionAsByteArray<TId> :
-        EntityWithAllLocalMetaAndVersion<TId, byte[]>, IHaveVersionAsByteArray
+    public abstract class EntityWithAllMetaAndVersionAsGuid<TId> :
+        EntityWithAllMetaAndVersion<TId, Guid>, IHaveVersionAsGuid
         where TId : IEquatable<TId>
     {
         /// <summary>
         /// Creates a new instance
         /// </summary>
-        protected EntityWithAllLocalMetaAndVersionAsByteArray()
+        protected EntityWithAllMetaAndVersionAsGuid()
         {
 
         }
@@ -105,7 +106,7 @@ namespace SimpleSoft.Persistence.Model
         /// Creates a new instance
         /// </summary>
         /// <param name="id">The unique identifier</param>
-        protected EntityWithAllLocalMetaAndVersionAsByteArray(TId id) : base(id)
+        protected EntityWithAllMetaAndVersionAsGuid(TId id) : base(id)
         {
 
         }

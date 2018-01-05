@@ -24,25 +24,25 @@
 
 using System;
 
+// ReSharper disable once CheckNamespace
 namespace SimpleSoft.Persistence.Model
 {
     /// <summary>
     /// Represents an entity that has an unique identifier, created, updated, deleted metadata
-    /// and version.
+    /// and version as long.
     /// </summary>
     /// <typeparam name="TId">The identifier type</typeparam>
     /// <typeparam name="TCreated">The created by type</typeparam>
     /// <typeparam name="TUpdated">The updated by type</typeparam>
     /// <typeparam name="TDeleted">The deleted by type</typeparam>
-    /// <typeparam name="TVersion">The version type</typeparam>
-    public abstract class EntityWithAllMetaAndVersion<TId, TCreated, TUpdated, TDeleted, TVersion> : 
-        EntityWithAllMeta<TId, TCreated, TUpdated, TDeleted>, IHaveVersion<TVersion>
+    public abstract class EntityWithAllMetaAndVersionAsLong<TId, TCreated, TUpdated, TDeleted> :
+        EntityWithAllMetaAndVersion<TId, TCreated, TUpdated, TDeleted, long>, IHaveVersionAsLong
         where TId : IEquatable<TId>
     {
         /// <summary>
         /// Creates a new instance
         /// </summary>
-        protected EntityWithAllMetaAndVersion()
+        protected EntityWithAllMetaAndVersionAsLong()
         {
 
         }
@@ -51,29 +51,26 @@ namespace SimpleSoft.Persistence.Model
         /// Creates a new instance
         /// </summary>
         /// <param name="id">The unique identifier</param>
-        protected EntityWithAllMetaAndVersion(TId id) : base(id)
+        protected EntityWithAllMetaAndVersionAsLong(TId id) : base(id)
         {
 
         }
-
-        /// <inheritdoc />
-        public virtual TVersion Version { get; set; }
     }
 
     /// <summary>
     /// Represents an entity that has an unique identifier, created, updated, deleted metadata
-    /// and version.
+    /// and version as long.
     /// </summary>
     /// <typeparam name="TId">The identifier type</typeparam>
     /// <typeparam name="TBy">The by type</typeparam>
-    /// <typeparam name="TVersion">The version type</typeparam>
-    public abstract class EntityWithAllMetaAndVersion<TId, TBy, TVersion> : EntityWithAllMetaAndVersion<TId, TBy, TBy, TBy, TVersion>
+    public abstract class EntityWithAllMetaAndVersionAsLong<TId, TBy> :
+        EntityWithAllMetaAndVersion<TId, TBy, long>, IHaveVersionAsLong
         where TId : IEquatable<TId>
     {
         /// <summary>
         /// Creates a new instance
         /// </summary>
-        protected EntityWithAllMetaAndVersion()
+        protected EntityWithAllMetaAndVersionAsLong()
         {
 
         }
@@ -82,7 +79,7 @@ namespace SimpleSoft.Persistence.Model
         /// Creates a new instance
         /// </summary>
         /// <param name="id">The unique identifier</param>
-        protected EntityWithAllMetaAndVersion(TId id) : base(id)
+        protected EntityWithAllMetaAndVersionAsLong(TId id) : base(id)
         {
 
         }
@@ -90,18 +87,17 @@ namespace SimpleSoft.Persistence.Model
 
     /// <summary>
     /// Represents an entity that has an unique identifier, created, updated, deleted metadata
-    /// and version.
+    /// and version as long.
     /// </summary>
     /// <typeparam name="TId">The identifier type</typeparam>
-    /// <typeparam name="TVersion">The version type</typeparam>
-    public abstract class EntityWithAllMetaAndVersion<TId, TVersion> : 
-        EntityWithAllMetaAndVersion<TId, string, string, string, TVersion>, IHaveCreatedMeta, IHaveUpdatedMeta, IHaveDeletedMeta
+    public abstract class EntityWithAllMetaAndVersionAsLong<TId> :
+        EntityWithAllMetaAndVersion<TId, long>, IHaveVersionAsLong
         where TId : IEquatable<TId>
     {
         /// <summary>
         /// Creates a new instance
         /// </summary>
-        protected EntityWithAllMetaAndVersion()
+        protected EntityWithAllMetaAndVersionAsLong()
         {
 
         }
@@ -110,7 +106,7 @@ namespace SimpleSoft.Persistence.Model
         /// Creates a new instance
         /// </summary>
         /// <param name="id">The unique identifier</param>
-        protected EntityWithAllMetaAndVersion(TId id) : base(id)
+        protected EntityWithAllMetaAndVersionAsLong(TId id) : base(id)
         {
 
         }

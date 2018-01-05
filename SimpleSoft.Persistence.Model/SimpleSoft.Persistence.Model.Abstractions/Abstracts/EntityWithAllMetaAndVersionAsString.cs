@@ -24,24 +24,25 @@
 
 using System;
 
+// ReSharper disable once CheckNamespace
 namespace SimpleSoft.Persistence.Model
 {
     /// <summary>
     /// Represents an entity that has an unique identifier, created, updated, deleted metadata
-    /// and version as long.
+    /// and version as string.
     /// </summary>
     /// <typeparam name="TId">The identifier type</typeparam>
     /// <typeparam name="TCreated">The created by type</typeparam>
     /// <typeparam name="TUpdated">The updated by type</typeparam>
     /// <typeparam name="TDeleted">The deleted by type</typeparam>
-    public abstract class EntityWithAllLocalMetaAndVersionAsLong<TId, TCreated, TUpdated, TDeleted> :
-        EntityWithAllLocalMetaAndVersion<TId, TCreated, TUpdated, TDeleted, long>, IHaveVersionAsLong
+    public abstract class EntityWithAllMetaAndVersionAsString<TId, TCreated, TUpdated, TDeleted> :
+        EntityWithAllMetaAndVersion<TId, TCreated, TUpdated, TDeleted, string>, IHaveVersionAsString
         where TId : IEquatable<TId>
     {
         /// <summary>
         /// Creates a new instance
         /// </summary>
-        protected EntityWithAllLocalMetaAndVersionAsLong()
+        protected EntityWithAllMetaAndVersionAsString()
         {
 
         }
@@ -50,7 +51,7 @@ namespace SimpleSoft.Persistence.Model
         /// Creates a new instance
         /// </summary>
         /// <param name="id">The unique identifier</param>
-        protected EntityWithAllLocalMetaAndVersionAsLong(TId id) : base(id)
+        protected EntityWithAllMetaAndVersionAsString(TId id) : base(id)
         {
 
         }
@@ -58,18 +59,18 @@ namespace SimpleSoft.Persistence.Model
 
     /// <summary>
     /// Represents an entity that has an unique identifier, created, updated, deleted metadata
-    /// and version as long.
+    /// and version as string.
     /// </summary>
     /// <typeparam name="TId">The identifier type</typeparam>
     /// <typeparam name="TBy">The by type</typeparam>
-    public abstract class EntityWithAllLocalMetaAndVersionAsLong<TId, TBy> :
-        EntityWithAllLocalMetaAndVersion<TId, TBy, long>, IHaveVersionAsLong
+    public abstract class EntityWithAllMetaAndVersionAsString<TId, TBy> :
+        EntityWithAllMetaAndVersion<TId, TBy, string>, IHaveVersionAsString
         where TId : IEquatable<TId>
     {
         /// <summary>
         /// Creates a new instance
         /// </summary>
-        protected EntityWithAllLocalMetaAndVersionAsLong()
+        protected EntityWithAllMetaAndVersionAsString()
         {
 
         }
@@ -78,7 +79,7 @@ namespace SimpleSoft.Persistence.Model
         /// Creates a new instance
         /// </summary>
         /// <param name="id">The unique identifier</param>
-        protected EntityWithAllLocalMetaAndVersionAsLong(TId id) : base(id)
+        protected EntityWithAllMetaAndVersionAsString(TId id) : base(id)
         {
 
         }
@@ -86,17 +87,17 @@ namespace SimpleSoft.Persistence.Model
 
     /// <summary>
     /// Represents an entity that has an unique identifier, created, updated, deleted metadata
-    /// and version as long.
+    /// and version as string.
     /// </summary>
     /// <typeparam name="TId">The identifier type</typeparam>
-    public abstract class EntityWithAllLocalMetaAndVersionAsLong<TId> :
-        EntityWithAllLocalMetaAndVersion<TId, long>, IHaveVersionAsLong
+    public abstract class EntityWithAllMetaAndVersionAsString<TId> :
+        EntityWithAllMetaAndVersion<TId, string>, IHaveVersionAsString
         where TId : IEquatable<TId>
     {
         /// <summary>
         /// Creates a new instance
         /// </summary>
-        protected EntityWithAllLocalMetaAndVersionAsLong()
+        protected EntityWithAllMetaAndVersionAsString()
         {
 
         }
@@ -105,7 +106,7 @@ namespace SimpleSoft.Persistence.Model
         /// Creates a new instance
         /// </summary>
         /// <param name="id">The unique identifier</param>
-        protected EntityWithAllLocalMetaAndVersionAsLong(TId id) : base(id)
+        protected EntityWithAllMetaAndVersionAsString(TId id) : base(id)
         {
 
         }

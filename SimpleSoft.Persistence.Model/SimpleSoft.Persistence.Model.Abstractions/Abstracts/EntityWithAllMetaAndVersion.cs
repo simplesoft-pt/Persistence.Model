@@ -24,78 +24,57 @@
 
 using System;
 
+// ReSharper disable once CheckNamespace
 namespace SimpleSoft.Persistence.Model
 {
     /// <summary>
-    /// Represents an entity that has an unique identifier, created, updated and deleted metadata
+    /// Represents an entity that has an unique identifier, created, updated, deleted metadata
+    /// and version.
     /// </summary>
     /// <typeparam name="TId">The identifier type</typeparam>
     /// <typeparam name="TCreated">The created by type</typeparam>
     /// <typeparam name="TUpdated">The updated by type</typeparam>
     /// <typeparam name="TDeleted">The deleted by type</typeparam>
-    public abstract class EntityWithAllMeta<TId, TCreated, TUpdated, TDeleted> : 
-        Entity<TId>, IHaveCreatedMeta<TCreated>, IHaveUpdatedMeta<TUpdated>, IHaveDeletedMeta<TDeleted>
+    /// <typeparam name="TVersion">The version type</typeparam>
+    public abstract class EntityWithAllMetaAndVersion<TId, TCreated, TUpdated, TDeleted, TVersion> : 
+        EntityWithAllMeta<TId, TCreated, TUpdated, TDeleted>, IHaveVersion<TVersion>
         where TId : IEquatable<TId>
     {
-        private DateTimeOffset _createdOn;
-        private DateTimeOffset _updatedOn;
-
         /// <summary>
         /// Creates a new instance
         /// </summary>
-        protected EntityWithAllMeta()
+        protected EntityWithAllMetaAndVersion()
         {
-            _createdOn = _updatedOn = DateTimeOffset.Now;
+
         }
 
         /// <summary>
         /// Creates a new instance
         /// </summary>
         /// <param name="id">The unique identifier</param>
-        protected EntityWithAllMeta(TId id) : base(id)
+        protected EntityWithAllMetaAndVersion(TId id) : base(id)
         {
-            _createdOn = _updatedOn = DateTimeOffset.Now;
+
         }
 
         /// <inheritdoc />
-        public virtual DateTimeOffset CreatedOn
-        {
-            get => _createdOn;
-            set => _createdOn = value;
-        }
-
-        /// <inheritdoc />
-        public virtual TCreated CreatedBy { get; set; }
-
-        /// <inheritdoc />
-        public virtual DateTimeOffset UpdatedOn
-        {
-            get => _updatedOn;
-            set => _updatedOn = value;
-        }
-
-        /// <inheritdoc />
-        public virtual TUpdated UpdatedBy { get; set; }
-
-        /// <inheritdoc />
-        public virtual DateTimeOffset? DeletedOn { get; set; }
-
-        /// <inheritdoc />
-        public virtual TDeleted DeletedBy { get; set; }
+        public virtual TVersion Version { get; set; }
     }
 
     /// <summary>
-    /// Represents an entity that has an unique identifier, created, updated and deleted metadata
+    /// Represents an entity that has an unique identifier, created, updated, deleted metadata
+    /// and version.
     /// </summary>
     /// <typeparam name="TId">The identifier type</typeparam>
     /// <typeparam name="TBy">The by type</typeparam>
-    public abstract class EntityWithAllMeta<TId, TBy> : EntityWithAllMeta<TId, TBy, TBy, TBy>
+    /// <typeparam name="TVersion">The version type</typeparam>
+    public abstract class EntityWithAllMetaAndVersion<TId, TBy, TVersion> : EntityWithAllMetaAndVersion<TId, TBy, TBy, TBy, TVersion>
         where TId : IEquatable<TId>
     {
         /// <summary>
         /// Creates a new instance
         /// </summary>
-        protected EntityWithAllMeta()
+        protected EntityWithAllMetaAndVersion()
         {
 
         }
@@ -104,24 +83,26 @@ namespace SimpleSoft.Persistence.Model
         /// Creates a new instance
         /// </summary>
         /// <param name="id">The unique identifier</param>
-        protected EntityWithAllMeta(TId id) : base(id)
+        protected EntityWithAllMetaAndVersion(TId id) : base(id)
         {
 
         }
     }
 
     /// <summary>
-    /// Represents an entity that has an unique identifier, created, updated and deleted metadata
+    /// Represents an entity that has an unique identifier, created, updated, deleted metadata
+    /// and version.
     /// </summary>
     /// <typeparam name="TId">The identifier type</typeparam>
-    public abstract class EntityWithAllMeta<TId> : 
-        EntityWithAllMeta<TId, string, string, string>, IHaveCreatedMeta, IHaveUpdatedMeta, IHaveDeletedMeta
+    /// <typeparam name="TVersion">The version type</typeparam>
+    public abstract class EntityWithAllMetaAndVersion<TId, TVersion> : 
+        EntityWithAllMetaAndVersion<TId, string, string, string, TVersion>, IHaveCreatedMeta, IHaveUpdatedMeta, IHaveDeletedMeta
         where TId : IEquatable<TId>
     {
         /// <summary>
         /// Creates a new instance
         /// </summary>
-        protected EntityWithAllMeta()
+        protected EntityWithAllMetaAndVersion()
         {
 
         }
@@ -130,7 +111,7 @@ namespace SimpleSoft.Persistence.Model
         /// Creates a new instance
         /// </summary>
         /// <param name="id">The unique identifier</param>
-        protected EntityWithAllMeta(TId id) : base(id)
+        protected EntityWithAllMetaAndVersion(TId id) : base(id)
         {
 
         }
