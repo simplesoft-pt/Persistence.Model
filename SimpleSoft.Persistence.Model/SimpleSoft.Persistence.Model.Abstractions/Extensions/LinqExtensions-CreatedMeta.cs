@@ -35,9 +35,9 @@ namespace System.Linq
         /// by created identifier.
         /// </summary>
         /// <typeparam name="T">Entity type</typeparam>
-        /// <typeparam name="TBy">Created property type</typeparam>
+        /// <typeparam name="TBy">Property type</typeparam>
         /// <param name="items">Collection to filter</param>
-        /// <param name="by">The created identifier</param>
+        /// <param name="by">The identifier</param>
         /// <returns>A collection of items filtered</returns>
         /// <exception cref="ArgumentNullException"></exception>
         public static IEnumerable<T> WhereWasCreatedBy<T, TBy>(this IEnumerable<T> items, TBy by)
@@ -56,7 +56,7 @@ namespace System.Linq
         /// </summary>
         /// <typeparam name="T">Entity type</typeparam>
         /// <param name="items">Collection to filter</param>
-        /// <param name="by">The created identifier</param>
+        /// <param name="by">The identifier</param>
         /// <param name="comparisonType">The comparison type</param>
         /// <returns>A collection of items filtered</returns>
         /// <exception cref="ArgumentNullException"></exception>
@@ -74,9 +74,9 @@ namespace System.Linq
         /// by created identifier.
         /// </summary>
         /// <typeparam name="T">Entity type</typeparam>
-        /// <typeparam name="TBy">Created property type</typeparam>
+        /// <typeparam name="TBy">Property type</typeparam>
         /// <param name="items">Collection to filter</param>
-        /// <param name="by">The created identifier</param>
+        /// <param name="by">The identifier</param>
         /// <returns>A collection of items filtered</returns>
         /// <exception cref="ArgumentNullException"></exception>
         public static IQueryable<T> WhereWasCreatedBy<T, TBy>(this IQueryable<T> items, TBy by)
@@ -95,7 +95,7 @@ namespace System.Linq
         /// </summary>
         /// <typeparam name="T">Entity type</typeparam>
         /// <param name="items">Collection to filter</param>
-        /// <param name="by">The created identifier</param>
+        /// <param name="by">The identifier</param>
         /// <param name="comparisonType">The comparison type</param>
         /// <returns>A collection of items filtered</returns>
         /// <exception cref="ArgumentNullException"></exception>
@@ -113,9 +113,9 @@ namespace System.Linq
         /// by created identifier.
         /// </summary>
         /// <typeparam name="T">Entity type</typeparam>
-        /// <typeparam name="TBy">Created property type</typeparam>
+        /// <typeparam name="TBy">Property type</typeparam>
         /// <param name="items">Collection to filter</param>
-        /// <param name="by">The created identifier</param>
+        /// <param name="by">The identifier</param>
         /// <returns>A collection of items filtered</returns>
         /// <exception cref="ArgumentNullException"></exception>
         public static IEnumerable<T> WhereWasCreatedLocallyBy<T, TBy>(this IEnumerable<T> items, TBy by)
@@ -134,7 +134,7 @@ namespace System.Linq
         /// </summary>
         /// <typeparam name="T">Entity type</typeparam>
         /// <param name="items">Collection to filter</param>
-        /// <param name="by">The created identifier</param>
+        /// <param name="by">The identifier</param>
         /// <param name="comparisonType">The comparison type</param>
         /// <returns>A collection of items filtered</returns>
         /// <exception cref="ArgumentNullException"></exception>
@@ -152,9 +152,9 @@ namespace System.Linq
         /// by created identifier.
         /// </summary>
         /// <typeparam name="T">Entity type</typeparam>
-        /// <typeparam name="TBy">Created property type</typeparam>
+        /// <typeparam name="TBy">Property type</typeparam>
         /// <param name="items">Collection to filter</param>
-        /// <param name="by">The created identifier</param>
+        /// <param name="by">The identifier</param>
         /// <returns>A collection of items filtered</returns>
         /// <exception cref="ArgumentNullException"></exception>
         public static IQueryable<T> WhereWasCreatedLocallyBy<T, TBy>(this IQueryable<T> items, TBy by)
@@ -173,7 +173,7 @@ namespace System.Linq
         /// </summary>
         /// <typeparam name="T">Entity type</typeparam>
         /// <param name="items">Collection to filter</param>
-        /// <param name="by">The created identifier</param>
+        /// <param name="by">The identifier</param>
         /// <param name="comparisonType">The comparison type</param>
         /// <returns>A collection of items filtered</returns>
         /// <exception cref="ArgumentNullException"></exception>
