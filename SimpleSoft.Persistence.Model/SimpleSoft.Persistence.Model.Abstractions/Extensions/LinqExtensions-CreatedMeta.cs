@@ -52,6 +52,25 @@ namespace System.Linq
 
         /// <summary>
         /// Filters a collection of <see cref="IHaveCreatedMeta{TCreatedBy}"/> instances
+        /// by their string created identifier using a comparison type.
+        /// </summary>
+        /// <typeparam name="T">Entity type</typeparam>
+        /// <param name="items">Collection to filter</param>
+        /// <param name="by">The created identifier</param>
+        /// <param name="comparisonType">The comparison type</param>
+        /// <returns>A collection of items filtered</returns>
+        /// <exception cref="ArgumentNullException"></exception>
+        public static IEnumerable<T> WhereWasCreatedBy<T>(this IEnumerable<T> items, string by, StringComparison comparisonType)
+            where T : class, IHaveCreatedMeta<string>
+        {
+            if (items == null) throw new ArgumentNullException(nameof(items));
+            if (by == null) throw new ArgumentNullException(nameof(by));
+
+            return items.Where(e => by.Equals(e.CreatedBy, comparisonType));
+        }
+
+        /// <summary>
+        /// Filters a collection of <see cref="IHaveCreatedMeta{TCreatedBy}"/> instances
         /// by created identifier.
         /// </summary>
         /// <typeparam name="T">Entity type</typeparam>
@@ -68,6 +87,25 @@ namespace System.Linq
             if (by == null) throw new ArgumentNullException(nameof(by));
 
             return items.Where(e => by.Equals(e.CreatedBy));
+        }
+
+        /// <summary>
+        /// Filters a collection of <see cref="IHaveCreatedMeta{TCreatedBy}"/> instances
+        /// by their string created identifier using a comparison type.
+        /// </summary>
+        /// <typeparam name="T">Entity type</typeparam>
+        /// <param name="items">Collection to filter</param>
+        /// <param name="by">The created identifier</param>
+        /// <param name="comparisonType">The comparison type</param>
+        /// <returns>A collection of items filtered</returns>
+        /// <exception cref="ArgumentNullException"></exception>
+        public static IQueryable<T> WhereWasCreatedBy<T>(this IQueryable<T> items, string by, StringComparison comparisonType)
+            where T : class, IHaveCreatedMeta<string>
+        {
+            if (items == null) throw new ArgumentNullException(nameof(items));
+            if (by == null) throw new ArgumentNullException(nameof(by));
+
+            return items.Where(e => by.Equals(e.CreatedBy, comparisonType));
         }
 
         /// <summary>
@@ -92,6 +130,25 @@ namespace System.Linq
 
         /// <summary>
         /// Filters a collection of <see cref="IHaveCreatedLocalMeta{TCreatedBy}"/> instances
+        /// by their string created identifier using a comparison type.
+        /// </summary>
+        /// <typeparam name="T">Entity type</typeparam>
+        /// <param name="items">Collection to filter</param>
+        /// <param name="by">The created identifier</param>
+        /// <param name="comparisonType">The comparison type</param>
+        /// <returns>A collection of items filtered</returns>
+        /// <exception cref="ArgumentNullException"></exception>
+        public static IEnumerable<T> WhereWasCreatedLocallyBy<T>(this IEnumerable<T> items, string by, StringComparison comparisonType)
+            where T : class, IHaveCreatedLocalMeta<string>
+        {
+            if (items == null) throw new ArgumentNullException(nameof(items));
+            if (by == null) throw new ArgumentNullException(nameof(by));
+
+            return items.Where(e => by.Equals(e.CreatedBy, comparisonType));
+        }
+
+        /// <summary>
+        /// Filters a collection of <see cref="IHaveCreatedLocalMeta{TCreatedBy}"/> instances
         /// by created identifier.
         /// </summary>
         /// <typeparam name="T">Entity type</typeparam>
@@ -108,6 +165,25 @@ namespace System.Linq
             if (by == null) throw new ArgumentNullException(nameof(by));
 
             return items.Where(e => by.Equals(e.CreatedBy));
+        }
+
+        /// <summary>
+        /// Filters a collection of <see cref="IHaveCreatedLocalMeta{TCreatedBy}"/> instances
+        /// by their string created identifier using a comparison type.
+        /// </summary>
+        /// <typeparam name="T">Entity type</typeparam>
+        /// <param name="items">Collection to filter</param>
+        /// <param name="by">The created identifier</param>
+        /// <param name="comparisonType">The comparison type</param>
+        /// <returns>A collection of items filtered</returns>
+        /// <exception cref="ArgumentNullException"></exception>
+        public static IQueryable<T> WhereWasCreatedLocallyBy<T>(this IQueryable<T> items, string by, StringComparison comparisonType)
+            where T : class, IHaveCreatedLocalMeta<string>
+        {
+            if (items == null) throw new ArgumentNullException(nameof(items));
+            if (by == null) throw new ArgumentNullException(nameof(by));
+
+            return items.Where(e => by.Equals(e.CreatedBy, comparisonType));
         }
     }
 }
