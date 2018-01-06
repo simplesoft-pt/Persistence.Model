@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27130.2010
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleSoft.Persistence.Model.Abstractions", "SimpleSoft.Persistence.Model.Abstractions\SimpleSoft.Persistence.Model.Abstractions.csproj", "{18D81BC1-60FE-4F45-8DF9-E0EA85699748}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SimpleSoft.Persistence.Model.Abstractions", "SimpleSoft.Persistence.Model.Abstractions\SimpleSoft.Persistence.Model.Abstractions.csproj", "{18D81BC1-60FE-4F45-8DF9-E0EA85699748}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{9E4C83AE-3E75-40D2-B12B-14AED617747B}"
 EndProject
@@ -13,6 +13,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tools", "tools", "{F5C110BE
 		..\Tools\SimpleSoft.Persistence.snk = ..\Tools\SimpleSoft.Persistence.snk
 		..\Tools\UpdateAllVersions.ps1 = ..\Tools\UpdateAllVersions.ps1
 	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{3098C4D1-5616-4F21-84EC-A3E1298B95ED}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleSoft.Persistence.Model.Tests", "SimpleSoft.Persistence.Model.Tests\SimpleSoft.Persistence.Model.Tests.csproj", "{5EB12B16-5E57-42CD-A730-8B2D27975CC6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -24,12 +28,17 @@ Global
 		{18D81BC1-60FE-4F45-8DF9-E0EA85699748}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{18D81BC1-60FE-4F45-8DF9-E0EA85699748}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{18D81BC1-60FE-4F45-8DF9-E0EA85699748}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5EB12B16-5E57-42CD-A730-8B2D27975CC6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5EB12B16-5E57-42CD-A730-8B2D27975CC6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5EB12B16-5E57-42CD-A730-8B2D27975CC6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5EB12B16-5E57-42CD-A730-8B2D27975CC6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{18D81BC1-60FE-4F45-8DF9-E0EA85699748} = {9E4C83AE-3E75-40D2-B12B-14AED617747B}
+		{5EB12B16-5E57-42CD-A730-8B2D27975CC6} = {3098C4D1-5616-4F21-84EC-A3E1298B95ED}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {727F950F-F442-4CA0-AD87-45DEED0D24AE}
