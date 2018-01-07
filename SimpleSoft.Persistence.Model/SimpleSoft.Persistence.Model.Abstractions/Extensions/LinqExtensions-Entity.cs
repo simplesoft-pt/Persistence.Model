@@ -41,6 +41,7 @@ namespace System.Linq
         /// <param name="id">The unique identifier</param>
         /// <returns>The entity or null of not found</returns>
         /// <exception cref="ArgumentNullException"></exception>
+        /// <exception cref="InvalidOperationException"></exception>
         public static T GetById<T, TId>(this IEnumerable<T> items, TId id)
             where T : class, IEntity<TId>
             where TId : IEquatable<TId>
