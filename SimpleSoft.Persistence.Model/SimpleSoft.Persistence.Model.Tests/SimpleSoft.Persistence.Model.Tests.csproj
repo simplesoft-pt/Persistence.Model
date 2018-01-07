@@ -14,7 +14,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Abstractions\" />
+    <ProjectReference Include="..\SimpleSoft.Persistence.Model.Abstractions\SimpleSoft.Persistence.Model.Abstractions.csproj" />
   </ItemGroup>
 
 </Project>
