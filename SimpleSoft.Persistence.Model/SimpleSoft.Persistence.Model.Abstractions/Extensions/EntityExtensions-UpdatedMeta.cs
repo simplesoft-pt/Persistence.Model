@@ -27,7 +27,7 @@ using System;
 // ReSharper disable once CheckNamespace
 namespace SimpleSoft.Persistence.Model
 {
-    public static partial class ModelExtensions
+    public static partial class EntityExtensions
     {
         /// <summary>
         /// Fills all metadata of a given <see cref="IHaveUpdatedMeta{TUpdatedBy}"/>.

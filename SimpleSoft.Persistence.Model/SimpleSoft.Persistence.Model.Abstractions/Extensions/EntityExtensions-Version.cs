@@ -28,7 +28,7 @@ using SimpleSoft.Persistence.Model.Exceptions;
 // ReSharper disable once CheckNamespace
 namespace SimpleSoft.Persistence.Model
 {
-    public static partial class ModelExtensions
+    public static partial class EntityExtensions
     {
         /// <summary>
         /// Throws an exception if the versions are different.

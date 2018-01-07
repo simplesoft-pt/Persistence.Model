@@ -26,9 +26,9 @@
 namespace SimpleSoft.Persistence.Model
 {
     /// <summary>
-    /// Extension methods for model interfaces
+    /// Extension methods for entity interfaces
     /// </summary>
-    public static partial class ModelExtensions
+    public static partial class EntityExtensions
     {
 
     }
