@@ -28,7 +28,7 @@ namespace System.Linq
     /// <summary>
     /// Extension methods for collections
     /// </summary>
-    public static partial class LinqExtensions
+    public static partial class LinqEntityExtensions
     {
 
     }

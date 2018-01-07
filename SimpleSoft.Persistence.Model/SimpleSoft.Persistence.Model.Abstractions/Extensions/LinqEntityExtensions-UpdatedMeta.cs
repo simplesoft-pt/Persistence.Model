@@ -28,7 +28,7 @@ using SimpleSoft.Persistence.Model;
 // ReSharper disable once CheckNamespace
 namespace System.Linq
 {
-    public static partial class LinqExtensions
+    public static partial class LinqEntityExtensions
     {
         /// <summary>
         /// Filters a collection of <see cref="IHaveUpdatedMeta{TUpdatedBy}"/> instances
