@@ -152,7 +152,7 @@ namespace SimpleSoft.Persistence.Model.Tests.Abstractions.Extensions.Linq
                 new EntityIntId(0),
             }.AsQueryable();
 
-            var entities = items.WhereId(id)?.ToArray();
+            var entities = items.WhereId(id);
             Assert.NotNull(entities);
             Assert.NotEmpty(entities);
         }
@@ -168,7 +168,7 @@ namespace SimpleSoft.Persistence.Model.Tests.Abstractions.Extensions.Linq
                 new EntityIntId(0),
             }.AsQueryable();
 
-            var entities = items.WhereId(id)?.ToArray();
+            var entities = items.WhereId(id);
             Assert.NotNull(entities);
             Assert.Empty(entities);
         }
